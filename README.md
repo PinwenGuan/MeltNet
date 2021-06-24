@@ -10,21 +10,16 @@ tar zxvf liq.tgz
 The code is dependent on pymatgen, PyTorch and scikit-learn, which should be installed first.<br>
 For Bayesian optimisation, dragonfly (https://github.com/dragonfly/dragonfly) should be installed first.<br>
 
-## Prepare the input files
+## General instructions
 
-Since you have finished the energy calculations, you should already have the structure file in your working folder (if not you need to do so). Currently dePye supports the structure files of VASP and Quantum ESPRESSO (QE), i.e., POSCAR and the .in file.<br> 
-Normally, the only input file you need to prepare is e-v.dat (can be a name ended with .dat) such as:<br>
-```
-# V(angstrom^3) E(eV) vol_0.98 vol_0.99 vol_1.00 vol_1.01 vol_1.02
+Adjustable parameters are listed in the beginning of each script.<br>
 
-69.131955   -7728.27656469   -7728.27686878   …
-71.217852   -7728.28518104   -7728.29116264   …
-73.345300   -7728.25348998   -7728.25450442   …
-75.514684   -7728.18594466   -7728.17339096   …
-77.726434   -7728.08681822   -7728.05316957   …
+## Generate data
+
+Type:<br>
 ```
-The comment lines do not matter. The first column is the volume (in angstrom^3), and the second, third, … is the energies (in eV). At least 5 V-E data points are needed. In the case of multiple sets of energies, each energy set will generate a result. For example, one can get two E-V datasets with and without relaxation, and get two sets of properties.<br>
-Note: the input data should be corresponded to the number of atoms in the structure file. 
+python generate_data.py
+```
 
 ## Run dePye
 
