@@ -40,35 +40,20 @@ python bo.py
 ``` 
 The configuration file should be present in the folder, and the default name is "config1.json", which is adjustable. The hyperparameters and associated loss function value in each evaluation will be printed.<br> 
 
-## Uncertainty quantification of thermodynamic properties
-
-The script gpaw/relax-n.py demonstrate using BEEF (Bayesian error estimation functional) to calculate an ensemble of E-V data by the code GPAW. Supposing you generate 2000 e-v.dat files from this calculations, i.e., e-v1.dat, e-v2.dat, ..., e-v2000.dat, then you can using a bash script like the following to obtain an ensemble of thermodynamic properties:<br>
-```
-for i in $(seq 1 2000)
-do
-python -c "from post import eos_gpaw;eos_gpaw(ev='e-v`echo $i`.dat',struc='POSCAR')"
-done
-```
-In this way, an estimation of uncertainty of thermodynamic properties caused by DFT functionals can be attained. There are also functions in the post module for generating probability distribution function of thermodynamic properties, calculating histograms of thermodynamic properties at certain temperature and their statistics and plotting results. 
-
 ## Author
-This software was primarily written by Pin-Wen Guan who was advised by Prof. Venkat Viswanathan.
+This software was written by Pin-Wen Guan who was advised by Prof. Venkat Viswanathan.
 
 ## Reference
 
-Please cite the reference below if you use dePye in your work:<br>
+Please cite the reference below if you use MeltNet in your work:<br>
 
-Pin-Wen Guan, Gregory Houchins, Venkatasubramanian Viswanathan. Uncertainty quantification of DFT-predicted finite temperature thermodynamic properties within the Debye model. The Journal of Chemical Physics, 2019, 151(24): 244702.<br>
+Pin-Wen Guan and Venkatasubramanian Viswanathan. “MeltNet: Predicting alloy melting temperature by machine learning”. In: arXiv preprint arXiv:2010.14048 (2020).<br>
 
 ```
-@article{guan2019uncertainty,
-  title={Uncertainty quantification of DFT-predicted finite temperature thermodynamic properties within the Debye model},
-  author={Guan, Pin-Wen and Houchins, Gregory and Viswanathan, Venkatasubramanian},
-  journal={The Journal of Chemical Physics},
-  volume={151},
-  number={24},
-  pages={244702},
-  year={2019},
-  publisher={AIP Publishing LLC}
+@article{guan2020meltnet,
+  title={MeltNet: Predicting alloy melting temperature by machine learning},
+  author={Guan, Pin-Wen and Viswanathan, Venkatasubramanian},
+  journal={arXiv preprint arXiv:2010.14048},
+  year={2020}
 }
 ```
