@@ -19,6 +19,7 @@ Adjustable parameters and their explanations are listed in the beginning of each
 ```
 python generate_data.py
 ```
+This command reads liquidus data from the files in the liq/ folder. A folder with default name "cv" containing all the necessary data for training will be generated.<br>
 
 ## Train MelNet
 
