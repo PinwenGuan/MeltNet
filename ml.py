@@ -1,6 +1,6 @@
 import numpy as np
 import pymatgen as mg
-from calf.constants import *
+from constants import *
 from pymatgen.ext.matproj import MPRester
 from scipy import interpolate 
 import torch 
