@@ -1,0 +1,35 @@
+{
+"name": "config",
+"domain" : {
+  "nh" : {
+    "name":"nh",
+    "type":"discrete_numeric",
+    "items":"20:1:51"
+  },
+  "nlh" : {
+    "name":"nlh",
+    "type":"discrete_numeric",
+    "items":"3:1:7"
+  },
+  "mom" : {
+    "name":"mom",
+    "type":"discrete_numeric",
+    "items":"0.1:0.1:1"
+  },
+  "bs" : {
+    "name":"bs",
+    "type":"discrete_numeric",
+    "items":"32-64-128-256-512"
+  },
+  "lr" : {
+    "name":"lr",
+    "type":"discrete_numeric",
+    "items":"0.01:0.01:0.21"
+  },
+  "wd" : {
+    "name":"wd",
+    "type":"discrete_numeric",
+    "items":"0:1e-4:1.1e-3"
+  }
+ }
+}
